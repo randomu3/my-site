@@ -12,30 +12,53 @@ const TestingPage = () => {
   const [selectedBot, setSelectedBot] = useState(null);
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState(mockBotMessages);
-  const [isSupportPageVisible, setIsSupportPageVisible] = useState(false); // Новое состояние
+  const [isSupportPageVisible, setIsSupportPageVisible] = useState(false);
 
   const handleSendMessage = () => {
     setChatHistory([...chatHistory, { id: Date.now(), message, type: "user" }]);
   };
 
+  let content;
+
+  if (isSupportPageVisible) {
+    content = (
+      <SupportPage
+        classes={classes}
+        onBack={() => setIsSupportPageVisible(false)}
+      />
+    );
+  } else if (selectedBot) {
+    content = (
+      <ChatInterface
+        classes={classes}
+        chatHistory={chatHistory}
+        onSendMessage={handleSendMessage}
+        onBotChange={() => setSelectedBot(null)}
+        message={message}
+        setMessage={setMessage}
+      />
+    );
+  } else {
+    content = (
+      <div>
+        <BotSelector classes={classes} onSelect={setSelectedBot} />
+        <div className={classes.buttonContainer}>
+          <Button
+            className={classes.blueButton}
+            onClick={() => setIsSupportPageVisible(true)}
+            variant="contained"
+            color="primary"
+          >
+            Техническая поддержка
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <PageWrapper title={"Тестирование бота"}>
-      <Container className={classes.container}>
-        {!selectedBot ? (
-          <div>
-            <BotSelector classes={classes} onSelect={setSelectedBot} />
-          </div>
-        ) : (
-          <ChatInterface
-            classes={classes}
-            chatHistory={chatHistory}
-            onSendMessage={handleSendMessage}
-            onBotChange={() => setSelectedBot(null)}
-            message={message}
-            setMessage={setMessage}
-          />
-        )}
-      </Container>
+      <Container className={classes.container}>{content}</Container>
     </PageWrapper>
   );
 };

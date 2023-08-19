@@ -18,10 +18,10 @@ const ChatInterface = ({ classes, chatHistory, onSendMessage, onBotChange, messa
         className={classes.input}
       />
       <div className={classes.buttonContainer}>
-        <Button onClick={onSendMessage} className={classes.button}>
+        <Button onClick={onSendMessage} className={classes.button} variant="contained" color="primary" >
           Отправить
         </Button>
-        <Button onClick={onBotChange} className={classes.button} variant="contained" color="primary">
+        <Button onClick={onBotChange} className={classes.blueButton} variant="contained" color="primary">
           Сменить бота
         </Button>
       </div>

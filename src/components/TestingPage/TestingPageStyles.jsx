@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(4),
       padding: theme.spacing(4),
     },
-  },  
+  },
   headerContainer: {
     display: "flex",
     justifyContent: "space-between",
@@ -22,14 +22,14 @@ export const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: "#fff",
-    display: "block"
+    display: "block",
   },
   subtitle: {
     marginBottom: theme.spacing(2),
     color: "#fff",
   },
   chatBox: {
-    height: 'auto',
+    height: "auto",
     maxHeight: "365px",
     overflowY: "auto",
     border: "1px solid #555",
@@ -71,7 +71,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    backgroundColor: "#555",
+    backgroundColor: "#555", // делаем кнопку серой
     color: "#fff",
     marginBottom: theme.spacing(1), // добавляем небольшой отступ снизу для мобильных устройств
     width: "100%", // кнопки будут занимать всю ширину на мобильных устройствах
@@ -84,17 +84,31 @@ export const useStyles = makeStyles((theme) => ({
   card: {
     marginBottom: theme.spacing(2),
   },
-  buttonContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexWrap: "wrap", // позволяет элементам переноситься на новую строку, если не хватает места
-  },
   backButton: {
     width: "100%", // кнопка "Назад" будет занимать всю ширину на мобильных устройствах
     [theme.breakpoints.up("sm")]: {
       // медиа-запрос для экранов от 600px и выше
       width: "auto",
     },
+  },
+  buttonContainer: {
+    display: "flex",
+    flexDirection: "column", // стекаем кнопки вертикально
+    alignItems: "center", // центрируем кнопки по горизонтали
+    marginTop: theme.spacing(2), // добавляем верхний отступ
+
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row", // на больших экранах кнопки располагаются горизонтально
+      justifyContent: "space-between", // распределяем кнопки по краям
+      alignItems: "center",
+    },
+  },
+  blueButton: {
+    backgroundColor: '#3f51b5',
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#0056b3", // темный оттенок синего при наведении
+    },
+    // ... возможно, другие стили, которые вы хотите добавить
   },
 }));

@@ -8,18 +8,16 @@ const ButtonSection = ({ classes }) => (
       to="/dashboard/billing"
       variant="outlined"
       color="default"
-      className={classes.billingButton}
     >
       Биллинг и платежи
     </Button>
     <Button
       component={Link}
-      to="/login"
-      variant="contained"
-      color="secondary"
-      className={classes.logoutButton}
+      to="/dashboard/security"
+      variant="outlined"
+      color="default"
     >
-      Выход из профиля
+      Безопасность
     </Button>
   </div>
 );

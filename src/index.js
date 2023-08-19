@@ -13,6 +13,7 @@ import BillingPage from "./components/BillingPage/BillingPage";
 import SupportPage from "./components/SupportPage/SupportPage";
 import UserActivityPage from "./components/UserActivityPage/UserActivityPage";
 import LoginPage from "./components/AuthPages/components/LoginPage/LoginPage";
+import SecurityPage from "./components/SecurityPage/SecurityPage";
 
 const root = document.getElementById("root");
 
@@ -30,6 +31,7 @@ ReactDOM.render(
       <Route path="/dashboard/user-activity" element={<UserActivityPage />} />
       <Route path="/dashboard/billing" element={<BillingPage />} />
       <Route path="/dashboard/support" element={<SupportPage />} />
+      <Route path="/dashboard/security" element={<SecurityPage />} />
       <Route path="/notifications" element={<NotificationPage />} />
     </Routes>
   </Router>,
