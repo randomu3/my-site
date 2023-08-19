@@ -10,12 +10,25 @@ import {
   Card,
   CardContent,
   FormControlLabel,
+  Button,
 } from "@material-ui/core";
 import { useStyles } from "./BotSettingsStyles";
+import { useNavigate } from "react-router-dom";
 
-const BotSettings = ({ selectedBot, earningModule, handleEarningModuleChange, profitPercentage, handleProfitPercentageChange, moduleDescription }) => {
+const BotSettings = ({
+  selectedBot,
+  earningModule,
+  handleEarningModuleChange,
+  profitPercentage,
+  handleProfitPercentageChange,
+  moduleDescription,
+}) => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
+  const goToNewsletterManagement = () => {
+    navigate("/dashboard/management/"); // Updated path navigation
+  };
   return (
     <div className={classes.botSettings}>
       <Card className={classes.botCard}>
@@ -24,15 +37,19 @@ const BotSettings = ({ selectedBot, earningModule, handleEarningModuleChange, pr
             Настройки для {selectedBot.name}
           </Typography>
 
+          <Button
+            onClick={goToNewsletterManagement}
+            className={classes.linkButton}
+          >
+            Управление рассылками
+          </Button>
+
           <Card className={classes.innerCard}>
             <CardContent>
               <Typography variant="h6" className={classes.subtitle}>
                 Модуль заработка
               </Typography>
-              <FormControl
-                component="fieldset"
-                className={classes.formControl}
-              >
+              <FormControl component="fieldset" className={classes.formControl}>
                 <RadioGroup
                   aria-label="earning module"
                   name="earningModule"
@@ -83,7 +100,7 @@ const BotSettings = ({ selectedBot, earningModule, handleEarningModuleChange, pr
 
           {moduleDescription && (
             <Card className={classes.innerCard}>
-              <CardContent>
+              <CardContent className={classes.content}>
                 <Typography variant="h6" className={classes.subtitle}>
                   Описание модуля
                 </Typography>

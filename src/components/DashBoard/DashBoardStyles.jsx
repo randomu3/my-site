@@ -26,6 +26,10 @@ export const useStyles = makeStyles((theme) => ({
     borderColor: "#333",
     color: "#333",
   },
+  title: {
+    color: "#444",
+    marginBottom: theme.spacing(2),
+  },
   card: {
     marginBottom: theme.spacing(3),
   },

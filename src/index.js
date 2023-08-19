@@ -14,6 +14,7 @@ import SupportPage from "./components/SupportPage/SupportPage";
 import UserActivityPage from "./components/UserActivityPage/UserActivityPage";
 import LoginPage from "./components/AuthPages/components/LoginPage/LoginPage";
 import SecurityPage from "./components/SecurityPage/SecurityPage";
+import NewsletterManagement from "./components/NewsletterManagement/NewsletterManagement";
 
 const root = document.getElementById("root");
 
@@ -32,6 +33,7 @@ ReactDOM.render(
       <Route path="/dashboard/billing" element={<BillingPage />} />
       <Route path="/dashboard/support" element={<SupportPage />} />
       <Route path="/dashboard/security" element={<SecurityPage />} />
+      <Route path="/dashboard/management" element={<NewsletterManagement />} />
       <Route path="/notifications" element={<NotificationPage />} />
     </Routes>
   </Router>,
