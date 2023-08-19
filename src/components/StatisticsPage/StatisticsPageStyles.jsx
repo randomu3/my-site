@@ -4,8 +4,7 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(4),
     padding: theme.spacing(4),
-    borderRadius: "8px",
-    backgroundColor: "#333",
+    backgroundColor: "#f5f5f5", // светлый фон
     width: '100%',
     maxWidth: '100%',
   },
@@ -16,25 +15,27 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   title: {
-    color: "#fff",
+    color: "#333", // темный цвет текста
   },
   statsText: {
-    color: "#ddd",
+    color: "#555", // немного светлее цвет текста
     marginBottom: theme.spacing(2),
   },
   backButton: {
-    backgroundColor: "#555",
-    color: "#fff",
+    backgroundColor: "#e0e0e0", // светлый фон кнопки
+    color: "#333", // темный цвет текста кнопки
     "&:hover": {
-      backgroundColor: "#777",
+      backgroundColor: "#d0d0d0", // немного темнее при наведении
     },
   },
   card: {
     marginTop: theme.spacing(4),
-    backgroundColor: "#444",
+    backgroundColor: "#fff", // белый фон для карточки
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // легкая тень для карточки
   },
   cardTitle: {
-    color: "#fff",
+    color: "#444", // темный цвет заголовка карточки
     marginBottom: theme.spacing(2),
   },
 }));
+

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Typography,
-  Button,
-} from "@material-ui/core";
+import { Container, Typography, Button } from "@material-ui/core";
 import { mockBots, mockModules } from "../../utils/mockDashbord/mockData";
 import { useStyles } from "./DashBoardStyles";
 import { Link } from "react-router-dom";
 import BotTokenForm from "./components/BotTokenForm/BotTokenForm";
 import BotSettings from "./components/BotSettings/BotSettings";
+import PageWrapper from "../PageWrapper/PageWrapper";
 
 const DashboardPage = () => {
   const classes = useStyles();
@@ -34,69 +31,37 @@ const DashboardPage = () => {
   )?.description;
 
   return (
-    <Container className={classes.container} maxWidth="lg">
-      <div className={classes.header}>
-        <Typography component="h1" variant="h5" className={classes.title}>
-          Личный кабинет
+    <PageWrapper title="Личный кабинет">
+      <Container className={classes.container} maxWidth="lg">
+        <BotTokenForm />
+
+        <Typography variant="h6" className={classes.title}>
+          Ваши боты:
         </Typography>
-        <div>
-          <Button
-            component={Link}
-            to="/dashboard/testing"
-            variant="outlined"
-            color="default"
-            style={{ marginRight: "10px" }}
-          >
-            Тестирование
-          </Button>
-          <Button
-            component={Link}
-            to="/dashboard/statistics"
-            variant="outlined"
-            color="default"
-            style={{ marginRight: "10px" }}
-          >
-            Статистика
-          </Button>
-          <Button
-            component={Link}
-            to="/login"
-            variant="contained"
-            color="primary"
-          >
-            Выход
-          </Button>
+        <div className={classes.botsList}>
+          {mockBots.map((bot) => (
+            <Button
+              key={bot.id}
+              onClick={() => handleBotSelect(bot)}
+              className={classes.botButton}
+            >
+              {bot.name}
+            </Button>
+          ))}
         </div>
-      </div>
 
-      <BotTokenForm />
-
-      <Typography variant="h6" className={classes.title}>
-        Ваши боты:
-      </Typography>
-      <div className={classes.botsList}>
-        {mockBots.map((bot) => (
-          <Button
-            key={bot.id}
-            onClick={() => handleBotSelect(bot)}
-            className={classes.botButton}
-          >
-            {bot.name}
-          </Button>
-        ))}
-      </div>
-
-      {selectedBot && (
-        <BotSettings
-          selectedBot={selectedBot}
-          earningModule={earningModule}
-          handleEarningModuleChange={handleEarningModuleChange}
-          profitPercentage={profitPercentage}
-          handleProfitPercentageChange={handleProfitPercentageChange}
-          moduleDescription={moduleDescription}
-        />
-      )}
-    </Container>
+        {selectedBot && (
+          <BotSettings
+            selectedBot={selectedBot}
+            earningModule={earningModule}
+            handleEarningModuleChange={handleEarningModuleChange}
+            profitPercentage={profitPercentage}
+            handleProfitPercentageChange={handleProfitPercentageChange}
+            moduleDescription={moduleDescription}
+          />
+        )}
+      </Container>
+    </PageWrapper>
   );
 };
 

@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
     padding: theme.spacing(4),
     borderRadius: "8px",
     backgroundColor: "#333",
@@ -21,7 +22,8 @@ export const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   chatBox: {
-    height: "400px",
+    height: 'auto',
+    maxHeight: "365px",
     overflowY: "auto",
     border: "1px solid #555",
     borderRadius: "8px",

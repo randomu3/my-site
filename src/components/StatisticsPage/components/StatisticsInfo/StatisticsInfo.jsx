@@ -1,10 +1,10 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import { useStyles } from './StatisticsInfoStyles';
+import { useStatisticsStyles } from './StatisticsInfoStyles';
 import { mockStatistics } from '../../../../utils/mockStatistics/mockData';
 
 const StatisticsInfo = () => {
-    const classes = useStyles();
+    const classes = useStatisticsStyles();
     return (
         <>
             <Typography variant="body1" className={classes.statsText}>Активные пользователи: {mockStatistics.activeUsers}</Typography>

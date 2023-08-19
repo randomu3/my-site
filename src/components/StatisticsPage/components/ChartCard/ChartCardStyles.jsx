@@ -1,14 +1,13 @@
 import { makeStyles } from "@material-ui/core";
 
-export const useStyles = makeStyles((theme) => ({
+export const useChartStyles = makeStyles((theme) => ({
     card: {
         marginTop: theme.spacing(4),
-        backgroundColor: "#444",
-        overflow: "hidden", // Это предотвратит выход содержимого за пределы карточки
+        backgroundColor: "#F5F5F5", // Светло-серый
+        overflow: "hidden",
     },
     cardTitle: {
-        color: "#fff",
+        color: "#212121", // Черный
         marginBottom: theme.spacing(2),
     },
-    // Добавьте дополнительные стили здесь, если они вам нужны
 }));

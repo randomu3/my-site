@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@material-ui/core';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useStyles } from './ChartCardStyles';
+import { useChartStyles } from './ChartCardStyles';
 
 const ChartCard = ({ title, data, dataKeys }) => {
-    const classes = useStyles();
+    const classes = useChartStyles();
     return (
         <Card className={classes.card}>
             <CardContent>

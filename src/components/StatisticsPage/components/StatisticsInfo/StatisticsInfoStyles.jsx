@@ -1,9 +1,8 @@
 import { makeStyles } from "@material-ui/core";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStatisticsStyles = makeStyles((theme) => ({
     statsText: {
-        color: "#ddd",
+        color: "#212121", // Черный
         marginBottom: theme.spacing(2),
     },
-    // Добавьте дополнительные стили здесь, если они вам нужны
 }));

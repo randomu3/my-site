@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, Typography } from "@material-ui/core";
 import { useTokenFormStyles } from "./BotTokenFormStyles";
 
 const BotTokenForm = () => {
@@ -7,6 +7,7 @@ const BotTokenForm = () => {
 
   return (
     <form className={classes.form}>
+      <Typography>Добавить бота</Typography>
       <TextField
         variant="outlined"
         margin="normal"
