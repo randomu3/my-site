@@ -7,9 +7,15 @@ const StatisticsInfo = () => {
     const classes = useStatisticsStyles();
     return (
         <>
-            <Typography variant="body1" className={classes.statsText}>Активные пользователи: {mockStatistics.activeUsers}</Typography>
-            <Typography variant="body1" className={classes.statsText}>Отправлено сообщений: {mockStatistics.totalMessagesSent}</Typography>
-            <Typography variant="body1" className={classes.statsText}>Использовано команд: {mockStatistics.totalCommandsUsed}</Typography>
+            <Typography variant="h6" className={classes.statsText}>
+                👥 Активные пользователи: {mockStatistics.activeUsers}
+            </Typography>
+            <Typography variant="h6" className={classes.statsText}>
+                💌 Отправлено сообщений: {mockStatistics.totalMessagesSent}
+            </Typography>
+            <Typography variant="h6" className={classes.statsText}>
+                🛠 Использовано команд: {mockStatistics.totalCommandsUsed}
+            </Typography>
         </>
     );
 };
