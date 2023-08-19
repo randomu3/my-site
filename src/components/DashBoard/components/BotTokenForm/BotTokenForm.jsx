@@ -7,7 +7,9 @@ const BotTokenForm = () => {
 
   return (
     <form className={classes.form}>
-      <Typography>Добавить бота</Typography>
+      <Typography variant="h6" className={classes.title}>
+        Добавить бота
+      </Typography>
       <TextField
         variant="outlined"
         margin="normal"

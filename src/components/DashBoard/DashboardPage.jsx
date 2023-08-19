@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Typography, Button } from "@material-ui/core";
 import { mockBots, mockModules } from "../../utils/mockDashbord/mockData";
 import { useStyles } from "./DashBoardStyles";
-import { Link } from "react-router-dom";
 import BotTokenForm from "./components/BotTokenForm/BotTokenForm";
 import BotSettings from "./components/BotSettings/BotSettings";
 import PageWrapper from "../PageWrapper/PageWrapper";
