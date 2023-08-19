@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoginPage, RegisterPage, ForgotPasswordPage } from './components/AuthPage/AuthPages.jsx';
 import DashboardPage from './components/DashBoard/DashboardPage';
-import BotTestingPage from './components/BotTestingPage/BotTestingPage';
-import BotStatisticsPage from './components/BotStatistics/BotStatisticsPage';
 import App from './components/AppPage/App';
+import StatisticsPage from './components/StatisticsPage/StatisticsPage.jsx';
+import TestingPage from './components/TestingPage/TestingPage.jsx'
 
 const root = document.getElementById('root');
 
@@ -17,8 +17,8 @@ ReactDOM.render(
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/dashboard/testing" element={<BotTestingPage />} /> {/* Новый маршрут */}
-      <Route path="/dashboard/statistics" element={<BotStatisticsPage />} /> {/* Новый маршрут */}
+      <Route path="/dashboard/testing" element={<TestingPage />} /> {/* Новый маршрут */}
+      <Route path="/dashboard/statistics" element={<StatisticsPage />} /> {/* Новый маршрут */}
     </Routes>
   </Router>,
   root

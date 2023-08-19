@@ -4,71 +4,61 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(4),
     padding: theme.spacing(4),
-    borderRadius: "8px",
-    backgroundColor: "#e0e0e0",
+    borderRadius: "12px",
+    backgroundColor: "#f5f5f5",
   },
   header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(3),
   },
   botsList: {
     display: "flex",
     overflowX: "auto",
-    marginBottom: theme.spacing(2),
-  },
-  botButton: {
-    margin: theme.spacing(0, 1),
-    minWidth: "120px",
-  },
-  botSettings: {
-    marginTop: theme.spacing(2),
-  },
-  title: {
-    color: "#000",
+    marginBottom: theme.spacing(3),
   },
   linkButton: {
     marginTop: theme.spacing(2),
     width: "100%",
     textDecoration: "none",
     textAlign: "center",
-    borderColor: "#000",
-    color: "#000",
+    borderColor: "#333",
+    color: "#333",
   },
   card: {
-    marginBottom: theme.spacing(2), // Добавлен отступ снизу
+    marginBottom: theme.spacing(3),
   },
   input: {
-    marginBottom: theme.spacing(2), // Добавлен отступ снизу
+    marginBottom: theme.spacing(3),
     "& label.Mui-focused": {
-      color: "#000",
+      color: "#555",
     },
     "& .MuiInput-underline:after": {
-      borderBottomColor: "#000",
+      borderBottomColor: "#555",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "#888",
+        borderColor: "#ccc",
       },
       "&:hover fieldset": {
-        borderColor: "#000",
+        borderColor: "#555",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "#000",
+        borderColor: "#555",
       },
     },
     "& .MuiOutlinedInput-input": {
-      color: "#000",
+      color: "#555",
     },
     "& .MuiInputLabel-root": {
-      color: "#888",
+      color: "#aaa",
     },
     "& .MuiInputLabel-root.Mui-focused": {
-      color: "#000",
+      color: "#555",
     },
     "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#888",
+      borderColor: "#ccc",
     },
   },
 }));

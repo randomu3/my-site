@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import {
   Container,
-  TextField,
   Typography,
   Button,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-  Radio,
-  RadioGroup,
 } from "@material-ui/core";
 import { mockBots, mockModules } from "../../utils/mockDashbord/mockData";
 import { useStyles } from "./DashBoardStyles";
 import { Link } from "react-router-dom";
-import BotTokenForm from "./components/BotTokenForm";
+import BotTokenForm from "./components/BotTokenForm/BotTokenForm";
+import BotSettings from "./components/BotSettings/BotSettings";
 
 const DashboardPage = () => {
   const classes = useStyles();
@@ -92,59 +87,14 @@ const DashboardPage = () => {
       </div>
 
       {selectedBot && (
-        <div className={classes.botSettings}>
-          <Typography variant="h6" className={classes.title}>
-            Настройки для {selectedBot.name}:
-          </Typography>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">Выберите модуль заработка:</FormLabel>
-            <RadioGroup
-              aria-label="earning module"
-              name="earningModule"
-              value={earningModule}
-              onChange={handleEarningModuleChange}
-            >
-              <FormControlLabel
-                value="boosting"
-                control={<Radio />}
-                label="Модуль накрутки"
-              />
-              <FormControlLabel
-                value="smsService"
-                control={<Radio />}
-                label="Модуль SMS сервиса"
-              />
-              <FormControlLabel
-                value="steamReplenishments"
-                control={<Radio />}
-                label="Модуль Steam пополнений"
-              />
-            </RadioGroup>
-          </FormControl>
-
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            type="number"
-            id="profitPercentage"
-            label="% прибыли"
-            name="profitPercentage"
-            value={profitPercentage}
-            onChange={handleProfitPercentageChange}
-            className={classes.input}
-          />
-
-          {moduleDescription && (
-            <>
-              <Typography variant="h6" className={classes.title}>
-                Описание модуля:
-              </Typography>
-              <Typography>{moduleDescription}</Typography>
-            </>
-          )}
-        </div>
+        <BotSettings
+          selectedBot={selectedBot}
+          earningModule={earningModule}
+          handleEarningModuleChange={handleEarningModuleChange}
+          profitPercentage={profitPercentage}
+          handleProfitPercentageChange={handleProfitPercentageChange}
+          moduleDescription={moduleDescription}
+        />
       )}
     </Container>
   );

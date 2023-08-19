@@ -10,10 +10,10 @@ import {
 } from "@material-ui/core";
 import { mockBotMessages } from "../../utils/mockStatistics/mockData";
 import { mockBots } from "../../utils/mockDashbord/mockData";
-import { useStyles } from "./BotTestingPageStyles";
+import { useStyles } from "./TestingPageStyles";
 import { Link } from "react-router-dom";
 
-const BotTestingPage = () => {
+const TestingPage = () => {
   const classes = useStyles();
   const [selectedBot, setSelectedBot] = useState(null);
   const [message, setMessage] = useState("");
@@ -99,4 +99,4 @@ const BotTestingPage = () => {
   );
 };
 
-export default BotTestingPage;
+export default TestingPage;
