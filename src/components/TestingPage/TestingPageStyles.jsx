@@ -2,12 +2,19 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4),
-    padding: theme.spacing(4),
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(2),
     borderRadius: "8px",
     backgroundColor: "#333",
   },
+  [theme.breakpoints.up("sm")]: {
+    container: {
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
+      padding: theme.spacing(4),
+    },
+  },  
   headerContainer: {
     display: "flex",
     justifyContent: "space-between",
@@ -73,11 +80,6 @@ export const useStyles = makeStyles((theme) => ({
       marginBottom: 0,
       width: "auto", // на больших экранах кнопки будут иметь автоматическую ширину
     },
-  },
-  buttonContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
   card: {
     marginBottom: theme.spacing(2),

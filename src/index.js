@@ -6,11 +6,13 @@ import App from "./components/AppPage/App";
 import StatisticsPage from "./components/StatisticsPage/StatisticsPage.jsx";
 import TestingPage from "./components/TestingPage/TestingPage.jsx";
 import UserProfile from "./components/UserProfile/UserProfile.jsx";
-import UserActivityPage from "./components/DashBoard/components/UserActivityPage/UserActivityPage.jsx";
 import RegisterPage from "./components/AuthPages/components/RegisterPage/RegisterPage";
 import ForgotPasswordPage from "./components/AuthPages/components/ForgotPasswordPage/ForgotPasswordPage";
-import LoginPage from "./components/AuthPages/components/LoginPage/LoginPage";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
+import BillingPage from "./components/BillingPage/BillingPage";
+import SupportPage from "./components/SupportPage/SupportPage";
+import UserActivityPage from "./components/UserActivityPage/UserActivityPage";
+import LoginPage from "./components/AuthPages/components/LoginPage/LoginPage";
 
 const root = document.getElementById("root");
 
@@ -26,7 +28,9 @@ ReactDOM.render(
       <Route path="/dashboard/statistics" element={<StatisticsPage />} />
       <Route path="/dashboard/profile" element={<UserProfile />} />
       <Route path="/dashboard/user-activity" element={<UserActivityPage />} />
-      <Route path="/notifications" element={<NotificationPage/>} />
+      <Route path="/dashboard/billing" element={<BillingPage />} />
+      <Route path="/dashboard/support" element={<SupportPage />} />
+      <Route path="/notifications" element={<NotificationPage />} />
     </Routes>
   </Router>,
   root

@@ -5,12 +5,10 @@ import {
   List,
   ListItem,
   ListItemText,
-  Button,
 } from "@material-ui/core";
-import { mockUserActivity } from "../../../../utils/mockUserActivity/mockData";
-import { Link } from "react-router-dom";
 import { useUserActivityStyles } from "./UserActivityPageStyles";
-import PageWrapper from "../../../PageWrapper/PageWrapper";
+import PageWrapper from "../PageWrapper/PageWrapper";
+import { mockUserActivity } from "../../utils/mockUserActivity/mockData";
 
 const UserActivityPage = () => {
   const classes = useUserActivityStyles();
